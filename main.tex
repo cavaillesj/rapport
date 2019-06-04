@@ -1,0 +1,660 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage{todonotes}
+
+
+%\addbibresource{references_zotero.bib}
+%\addbibresource
+%\bibliography{references_zotero.bib}
+
+
+\title{rapport}
+\author{jjycavailles }
+\date{May 2019}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+
+\usepackage{hyperref}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+%\bibliography{references.bib}
+%\bibliography{intro.bib}
+%\addbibresource{intro.bib}
+
+
+\begin{document}
+
+\begin{titlepage}
+
+\begin{center}
+  \includegraphics[width = 25mm]{LogoInsa.png} \hfill
+  \includegraphics[width = 30mm]{logo_cnrs.jpg}
+\end{center}
+
+%\title{\textbf{Rapport de stage} \\ Ingénieur en mathématique \\ \textbf{ Étude de la classification en régimes de temps et de leurs impacts pour des utilisations métiers.} }
+%\author{Jérôme Cavaillès \\ $4^{ième}$ année, Génie mathématique et modélisation \\ INSA Toulouse}
+%\date{28/06/2018 - 07/09/2018}
+
+
+
+
+\vspace*{1cm}
+
+\begin{center}
+\rule{\linewidth}{0.7mm} \\
+[0.4cm]
+\textbf{ \Huge Internship report} \\
+[0.2cm]
+\large \emph{Engineer in mathematics} \\ 
+[0.6cm]
+\textbf{ \huge Destabilizing effects of controlling ecosystem behavior} \\
+[0.4cm]
+03/01/2019 - 07/31/2019 \\
+[0.4cm]
+\rule{\linewidth}{0.7mm}
+\end{center}
+
+\vspace*{0.5cm}
+
+\begin{center}
+\textbf{\Large{Jérôme Cavaillès}} \footnote{\url{jcavaill@etud.insa-toulouse.fr}} \\ [0.3cm] $5$ years, Mathematical engineering and modeling \\ INSA Toulouse
+\end{center}
+
+%^{\text{ième}}
+
+%\maketitle
+
+\vspace*{3cm}
+
+\begin{flushleft}
+\hfill 
+Supervisor : Yuval Zelnik \footnote{\url{yuval.zelnik@sete.cnrs.fr}} \\
+Tutor : Robin Bouclier \footnote{\url{bouclier@insa-toulouse.fr}, \url{jean-yves.dauxois@math.univ-toulouse.fr}}  \hfill 
+Michel Loreau \footnote{\url{michel.loreau@sete.cnrs.fr}}
+
+ \\
+University : INSA Toulouse\footnote{135, Avenue de Rangueil 31077 Toulouse Cedex 4} \hfill
+Laboratory : CNRS-Moulis\footnote{2, route du CNRS - 09200 Moulis, France, \url{http://www.cbtm-moulis.com}} \\
+\end{flushleft}
+
+\end{titlepage}
+
+
+
+\newpage
+\addto\captionsfrench{\def\contentsname{}} % pour supprimer le "table des matières en haut"
+
+\paragraph{}
+%\section*{Contents}
+
+\addcontentsline{toc}{section}{Contents}
+
+\tableofcontents
+
+
+
+\newpage
+%\section*{Liste des figures, des tables et des algorithmes}
+%\addcontentsline{toc}{section}{Liste des figures, des tables et des algorithmes}
+%\paragraph{}
+\addcontentsline{toc}{section}{List of figures}
+\listoffigures
+
+
+\newpage
+\section*{Acknowledgment}
+\addcontentsline{toc}{section}{Acknowledgment}
+
+
+
+\newpage
+\todo{Choice of this internship ?}
+\section*{Introduction}
+\addcontentsline{toc}{section}{Introduction}
+
+\subsection*{Station presentation}
+\addcontentsline{toc}{subsection}{Station presentation (1-2 pages)}
+
+\paragraph{}
+CNRS\footnote{\url{http://www.cnrs.fr/en/cnrs}} is the acronym for Scientific Research National Center (Centre National de la Recherche Scientifique, in french) and was created on 19 October 1939. It is an institution recognised worldwide,  and the nature index ranked CNRS at one of the top spot \footnote{\url{https://www.natureindex.com/institution-outputs/generate/All/global/All/n_article}}. About 33,000 people are dedicated to research, in 1,144 research laboratories in France and abroad, with a budget around 3 billion. 
+
+Today led by Antoine Petit (President and CEO), this laboratories are organised in two kinds : proper units (UPRs) and mixed units (UMRs) this ones are managed in association with other French institutions (higher education establishment or another research institution). Also, 36 international Joint Units (UMI) collaborates around the world. The CNRS conducts research in all disciplines (Ecology and environment, Humanities and social sciences, Engineering and systems, Mathematics, Physics, Information sciences ... ).
+
+
+\paragraph{}
+One of this UMR (the UMR 5321) is  the Station for Theorical and Experimental Ecology\footnote{\url{http://www.ecoex-moulis.cnrs.fr/}} (SETE) located in Moulis\footnote{\url{http://www.communes.com/midi-pyrenees/ariege/moulis_09200/}} (Ariège, France) because of is nearness to a lot of cave. Actually, founded in 1948 by professors Jeannel and Vandel, the aim of the station was to used underground cave systems in order to study the formation and physical properties of karstic systems as well as systematics and adaptations in hypogeaic organisms. Under the direction of Jean Clobert\footnote{\url{http://www.ecoex-moulis.cnrs.fr/spip.php?article26}}, the laboratory move to perform more general research about ecology.
+
+Now directed by Michel Loreau\footnote{\url{http://www.ecoex-moulis.cnrs.fr/spip.php?article47}}, around 60 persons work on the station, on several axes : biodiversity and ecosystem functioning, conservation and land management, social interactions, environmental variation and evolution, phenotypic plasticity ...
+In order to perform experimentation, several experimental platform are dedicated. Cave system are still operational, a $750m^2$ greenhouses have been constructed, a $520m^2$ aviaries have been equipped with an automatic system for data capture using video and sensors. The station have also equipment for molecular Biology, cell biology, physiology, and for surgery and also to breed Invertebrates, fishes, amphibians, and reptiles. But, the most impressive equipment is the metatron\footnote{\url{https://themetatron.weebly.com/}}, which is a network cell semi-controlled. Each unit reproduce a small ecosystem (with vegetation and insect). Cells can be linked to study the dispersal of the species. By controlling the temperature, it is possible to investigate the consequences of the global change.
+
+
+
+\paragraph{}
+Since 2012, the station hosts a Centre for Biodiversity Theory and Modelling (CBTM) \todo{now renamed Linking ...} which aims to unifying theories of biodiversity changes and of their consequences. Leaded by 
+Jose M. Montoya\footnote{\url{http://www.cbtm-moulis.com/m-224-jose-m--montoya.html}}, the research could be from phylogenetics to human interactions. Indeed, the ambition of the team is to give a theoretical framework to a general biodiversity science in order to deal with the present biodiversity crisis\footnote{\url{https://www.ipbes.net/news/Media-Release-Global-Assessment-Fr}}.
+
+More precisely, the team focus on different axes : First,  trying to understand how the biodiversity change will affect ecosystem services. For example, how the loss of a specie can effect the crop production. But, because ecology and evolution theory are interrelated, we integrated the role of eco-evolutionary in the responses of environmental changes. The same work is done for structure, dynamics and function of ecosystem, who are also interconnected. \cite{bastazini2019loss}\cite{bideault2019temperature}\cite{galiana2019geographical}
+
+
+Furthermore, the human-nature interactions is studied is both direction : the human impact on biodiversity (habitat loss, fragmentation, global warming, etc ...) which represent a threat of at least one in six species during this century, but also the feedback of the loss of biodiversity on the human society. The aim is to study the long term sustainability of coupled social-ecological systems. Another objective is to better understand how biodiversity changes affect the service of ecosystem, typically, crop production or biological control in agricultural landscapes.
+\cite{cazalis2018we}\cite{lafuite2018sustainable}\cite{montoya2018trade}\cite{montoya2019trade}
+
+% Habitat fragmentation and spatial dynamics of biodiversity
+Moreover, fragmentation (at multiple spatial scales) is itself a subject of research : the habits loss and is splitting affect the spatial dynamics of the ecosystem, and a special attention is paid to metacommunities. \cite{goncalves2018habitat}\cite{jacob2018habitat}
+
+% Biodiversity and stability of ecological systems
+The last point is the study of the stability of ecological system\footnote{\url{http://www.cbtm-moulis.com/m-214-biostases.html}}. It is an important feature of ecosystem, because this notion is used in all previous axes. It is a main concern to understand and quantify stability both in time and in space \cite{wang2017invariability}\cite{zelnik2018impact}. But, because different measures are used in theory and experimental ecology , we tried to bridge the gap to unify the relative notion of the stability \cite{arnoldi2018ecosystems}\cite{barbier2019pyramids}.
+Different aspect of the stability are studied : the link between the diversity and the stability \cite{vallina2017phytoplankton} ; another is the stability of meta-ecosystems (food webs, synergies between multiple ecosystem)\cite{arnoldi2016particularity}\cite{lurgi2016effects}\cite{wang2016biodiversity}. Again, the sustainability of coupled social–ecological systems are studied, in as stability point of view (averting collapse for example). Moreover, a mathematical framework is built by exploring the different notions of stability in order to link them \cite{arnoldi2018ecosystems}\cite{arnoldi2016unifying}\cite{donohue2016navigating} and to known how to predict a critical change by looking at experimental measures such temporal variability\cite{arnoldi2016resilience}\cite{haegeman2016resilience}\cite{wang2017invariability}. 
+% citation fouillé jusqu'à 2016 inclus
+
+
+
+
+
+
+
+
+
+
+\newpage
+
+
+\subsection*{Context}
+\addcontentsline{toc}{subsection}{Context}
+
+
+%\paragraph{changed actual \\}
+\paragraph{} \todo{reformulate}
+
+% Nature change
+%One of the primary challenges of our time is to enhance global food production and security.
+%\item We understand sustainable development as the Brundtland Commission defines it as “development that meets the needs of the present without compromising the ability of future generations to meet their own needs” \cite{brundtland1985world}
+It is common knowledge that ecology actually faced one of the more important crisis \cite{oosthoek_humanity_2005}. So, it is important to understand how nature works in order to both predicts the following state of the ecology and also to better manage it.
+
+% Complex dynamics
+But, the dynamics of ecology proceeds in complex ways : in the sense that a lot of element are interconnected. Thus, it is impracticable to use traditional cartesianism decomposition to study the mechanics of the nature. Moreover, ecologist are usually interested to compute stability far from equilibrium (by opposition of the classical physical approach who consist to study stability near the equilibrium). % need news tools to understand it
+Therefore, ecology needs a new approach to deal with their problems. 
+% By using appropriate tools to tackle 
+% One of this is to study the "stability" of ecological dynamics. It is relevant to anticipate the consequences and the viability of ecosystem due to perturbation (from human and/or natural).
+
+
+
+
+\paragraph{} % measures of the stability, resilience
+\todo{expend or do appendices to talk more about this (stability)}
+% POLICYMAKERS and ECOLOGISTS needs measures 
+One of the needs for both policymakers and ecologists is to used well defined measures to quantifies ecosystem stability. It is requisite to quantify the health of an ecosystem, to set accurate goal for the future and to follow the development of this with the time \cite{donohue_navigating_2016} \cite{mayer2008strengths}. 
+
+% 163 definitions of 70 different stability concepts
+It is important to clarify the different notion related to the concept of stability. The difficulty is the different use of this word for different meaning. 163 definitions of 70 different stability concepts have been identified \cite{grimm1997babel}. % 6 main Stability still according to  \cite{grimm_babel_1997}
+But, according to the same article \cite{grimm1997babel}, only 6 concept are pertinent (constancy, resilience, persistence, resistance, elasticity and domain of attraction). Indeed, this notion are interrelated and can so be reduced \cite{donohue2013dimensionality}.
+
+One of them : resilience, is traditionally used alone in theoretical study, but is not the more relevant : new measure need to be introduced to bridge the gap between experimental and theoretical research \cite{arnoldi2016resilience} \cite{gunderson2000ecological} \cite{neubert_alternatives_1997} . Also, even if it is possible to reduce the number of the stability notions, several of them need to be used in order to consider all element of the "stability", to not loose information on the stability \cite{derissen_relationship_2011}. Furthermore, it is a compromise between using too little measures, which will not capture all the information and used too much measures which will not be practicable and even not catch all the information \cite{hillebrand2018decomposing}.
+
+
+
+
+%%%%%% not relevant, I think
+
+% \item the magnitude of disturbance that can be absorbed before the system changes its structure by changing the variables and processes that control behaviour \cite{holling2002resilience}
+
+% \item Moderate disturbance’may include severe mortality events such as catastrophic hurricane damage, provided that there is sufficient time between recurrent events to allow for recovery (Rogers 1993)
+
+
+
+\newpage
+
+\paragraph{ecosystem management \\}
+
+This different concept are of a main interest for ecosystem management \cite{mumby2014ecological}. It serves to anticipate the consequences of disturbances, in particular for anthropocentric ones. The impact of Human on nature can be both deliberate (when people choose to act on the ecosystem) or indirect (when the disturbances is a secondary effect of another goal). In the past decades, the field of ecosystem management has grown rapidly \cite{grumbine1997reflections} in response to the various modern disturbances, in order to sustain the integrity of ecosystem (which comprises the structure, the composition, the function ... ) \cite{jensen1994overview}. 
+
+An obstacle is to define measurable goal in order to have clear and trackable objective \cite{slocombe1998defining}. Even if it remain impossible to know the exact process of the ecosystem, it is still possible to understand in a certain way the main process, which could be sufficient for ecosystem management \cite{mori2011ecosystem}\cite{slocombe1998defining}\cite{stanley1995ecosystem}. 
+
+%\item A goal usually has a wide, almost ethical, dimension of rightness. Objectives are the specific, doable tasks needed to achieve the goal \cite{slocombe1998defining}
+%\item Sociological, ecological, technological, and economic information must be integrated \cite{jensen1994overview}
+
+\paragraph{too complex : Case study, forest fire management \\}
+
+To make easier to understand, a case studied is choose. We focus on forest fire management, because the dynamics of both the forest and the fire is established. Still, the management regarding forest fire (in other management in connection to both forest dynamics and fire control) stay interesting.
+
+
+
+\newpage
+
+
+\paragraph{forest disturbance}
+
+\begin{enumerate}
+    \item 
+\end{enumerate}
+
+
+There is also synergism among disturbances where one disturbance factor may cause
+another disturbance factor to occur, thus we cannot speak only about one type of disturbance, we must speak about group or co-influence of different types of disturbances. \cite{mandre_environmental_2011}
+
+
+\paragraph{forest management (control of fire, fuel removal ... )}
+
+\begin{itemize}
+    \item Broad-scale disturbances are prevalent in forest landscapes, and sometimes they are inherent to the evolution of those systems: disturbances create patterns and heterogeneity, which in turn influence ecological processes and flow \cite{turner2010disturbance}
+    \item By disturbances, we propose a description based on those of Rykiel (1985) and
+Pickett and White (1985): events that cause drastic changes in the state of an ecological system (for our purposes, a forest landscape) in response to a physical or biological cause. \cite{white1985natural} \cite{rykiel1985towards}
+    \item Extreme but rare disturbances represent a distinct category, as they destroy an entire forest landscape system and its structure. These catastrophes are termed “LIDS”—large and infrequent disturbances (Foster et al. 1998). \cite{foster1998landscape}
+    \item Multiple serial disturbances could result in cumulative effects in forest landscapes, leading to nonlinear or unanticipated responses. \cite{perera2015simulation}
+    \item Furthermore, with respect to disturbance, the line between “anthropogenic” and
+“natural” is inherently fuzzy, since humans modify disturbances both directly and
+indirectly through their actions \cite{perera2015simulation}
+    \item different duration \cite{perera2015simulation}
+    \begin{itemize}
+        \item pulse : (Earthquake, lava flow, landslide, flood, windstorm, ice storm, wildfire, Pest outbreaks, clearing of land, flooding by beavers)
+        \item Drought, water table fluctuation, temperature fluctuation, soil freeze–thaw cycles, soil erosion and deposition, Disease, low-intensity harvesting, grazing
+    \end{itemize}
+    \item In other regions (e.g., Fennoscandia) wildfires have been virtually eliminated by centuries of aggressive fire suppression, and now are being re-introduced to restore biodiversity patterns and ecosystem processes \cite{wallenius2011major}
+    \item disturbances are inter related \cite{keane2015exploring}
+    \item Mediterranean. However, the fire regime will be largely driven by weather \cite{fernandes_fire-smart_2013}
+    \item Climatic variation, through its effects on the moisture content of live fuels and larger dead fuels, is the predominant influence on fire frequency and severity \cite{schoennagel_interaction_2004}
+    \item All of these processes interact, and the relative importance of each (e.g., direct grazing impacts vs. fire exclusion vs. climatic fluctuation vs. CO2 fertilization) probably varies spatially and temporally across the vast expanse of heterogeneous environments occupied by pin˜ on and juniper vegetation. \cite{romme2009historical}  
+    \item In Canada, for example, the area logged per year year–1) doubled between 1960 (~500 000 hand 1995 year–1) (~1 Mh and, in many years, harvesting has replaced afire as the dominant disturbance in productive forests (World Resources Institute 2000). \cite{smith_canadas_2000}
+    \item Traditional forms of harvesting are fundamentally different from fire, wind throw, or other disturbances in our forests.
+    \item Climatic variability is a dominant factor affecting large wildfires in the western United States,\cite{mckenzie_climatic_2004}
+    \item Fire presents a particular challenge for conservation because it is stochastic in nature and is highly variable temporally and spatially (Agee 1998; Lertzman et al. 1998). \cite{agee1998landscape} \cite{lertzman1998three}
+    \item The synergism between climatic change and human action has provided conditions for the occurrence of forest fires in the Amazon. \cite{da2018dynamics}
+    \item For thousands of years, the periodic recurrence of fire has shaped the ecosystems of the Sierra Nevada (Skinner and Chang 1996). Because fire was so prevalent in the centuries before extensive Euro-American settlement (presettlement),
+    many common plants exhibit specific fire-adapted traits such as thick bark and fire-stimulated flowering, sprouting, seed release and/or germination (Chang 1994). \cite{mckelvey1996overview} \cite{chang1996ecosystem}
+    \item Demands on forests have become more diversified, thus making forest management and planning more complex \cite{eggers2017balancing}
+    \item Sustainable forest management (SFM) is many things to many people – yet a common thread is the pro-duction of forest goods and services for the present and future generations \cite{macdicken2015global}
+    \item From the earliest times, thoughtful people have encouraged the wise use of forests \cite{macdicken2015global}
+    \item ecosystem managementshould follow nature's lead, i.e., mimic natural disturbance patterns and recovery strategies \cite{bengston_changing_1994}
+    \item But most agree that the main objective of ecosystem management is main taining the forest ecosystem as an interconnected whole, not just producing wood and other commodities \cite{franklin1989toward}
+    \item Changes in area, Fragmentation, Loss of species, Loss/gain of nutrients, Pollution \cite{n.e._criteria_1997}
+    \item many studies on land sustainability have been published from different perspectives but always conceiving it as a desirable aim for balanced land development (Böhringer and Jochem, 2007; Blanchet, 2012; Mori and Christodoulou, 2012; Gerdessen and Pascucci, 2013, amongst others).
+    \item There is no consensus on the number of dimensions that explain sustainability. Many studies identify two main dimensions: environmental and economic \cite{martinez-vega_assessing_2016}
+    \item \cite{makela_using_2012}
+    \begin{itemize}
+        \item Maintenance and appropriate enhancement of forest resources and their contribution to global carbon cycles
+        \item Maintenance of forest ecosystem health and vitality
+        \item Maintenance and encouragement of productive functions of forests (wood and
+non-wood)
+        \item Maintenance, conservation and appropriate enhancement of biological diversity
+in forest ecosystems
+        \item Maintenance and appropriate enhancement of protective functions in forest
+management (notably soil and water)
+        \item Maintenance of other socioeconomic functions and conditions
+    \end{itemize}
+    \item Monitoring programs often depend on a small number of indicators and fail
+to consider the full complexity of the ecological system. \cite{dale2001challenges} -here discuss how to chose indicators)
+    \item Criteria for ecological indicators \cite{dale2001challenges} 
+    \begin{itemize}
+        \item Are easily measured
+        \item Are sensitive to stresses on system
+        \item Respond to stress in a predictable manner
+        \item Are anticipatory: signify an impending change in the ecological system
+        \item Predict changes that can be averted by management actions
+        \item Are integrative: the full suite of indicators provides a measure of coverage of the key gradients across the ecological systems (e.g. soils, vegetation types, temperature, etc.)
+        \item Have a known response to natural disturbances, anthropogenic stresses, and changes over time
+        \item  Have low variability in response
+        \end{itemize}
+    \item Hierarchical structure of C&I. \cite{mendoza2000development}
+        \begin{enumerate}
+            \item principles
+            \item criteria
+            \item indicators
+            \item versifiers
+        \end{enumerate}
+    \item We argue that the next generation of forestry practices need to understand and mimic natural disturbance dynamics much better than the present ones \cite{bengtsson2000biodiversity}
+    \item In other words, the conservation of native flora and fauna may be possible by emulating the size, frequency, pattern and severity of disturbances to which forest species have adapted over thousands of years \cite{hunter1990wildlife} \cite{hunter1988paleoecology}.
+\end{itemize}
+
+
+
+
+
+
+%\subsubsection*{ecosystem (general point of view)}
+%\addcontentsline{toc}{subsubsection}{ecosystem (general point of view)}
+%\begin{itemize}
+%    \item Human have an important impact on natural ecosystem
+%    \item ecosystem management (issue ... )
+%    \item stability / resilience / robustness measures ? \todo{here, or in methods ?}
+%    \item system too complex
+%\end{itemize}
+%\subsubsection*{forest fire management}
+%\addcontentsline{toc}{subsubsection}{forest fire management}
+%\begin{itemize}
+%    \item Special case : forest fire (simpler study)
+%    \item forest disturbances
+%    \item fire control
+%    \item fuel removal
+%    \item fire control without fuel removal $\Rightarrow$ higher risk of collapse
+%\end{itemize}
+
+
+
+
+\subsection*{Synopsis}
+\addcontentsline{toc}{subsection}{Synopsis}
+
+\begin{itemize}
+    \item problematic / aim / purpose
+    \item model of ode, numerical study (not invade on methods)
+    \item Announcement plan / Overview
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Methods
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+\section{Methods}
+
+
+\subsection{Model}
+
+\subsubsection{Model (original)}
+
+\paragraph{Model of the forest}
+
+\begin{itemize}
+    \item write the model \todo{Rewrite the model remove of positive perturbation we need to see the minus n the equations) and put the parameter on $N$ (because $W$ control $N$}
+    \item explain the coefficient
+    \item write assumptions
+\end{itemize}
+
+\paragraph{Model of the fire}
+
+\begin{itemize}
+    \item write the model
+    \item explain the coefficient
+    \item write assumptions
+\end{itemize}
+
+
+\subsubsection{Adimensionnalisation}
+
+
+link to calculus in appendix    
+
+
+
+
+
+\subsection{Parametrization}
+
+link between the forest literature and the model
+
+\paragraph{Estimation of the coefficient of the original model}
+
+\begin{itemize}
+    \item forest model
+    \begin{itemize}
+        \item $g$
+        \item $K$
+        \item $A$
+        \item $\mu$
+        \item $d$
+    \end{itemize}
+    \item fire model
+    \begin{itemize}
+        \item $frequency$
+        \item $s$
+        \item $\alpha$
+        \item $\beta$
+    \end{itemize}
+\end{itemize}
+
+
+
+\paragraph{Estimation of the coefficient of the original model}
+
+\begin{itemize}
+    \item forest model
+    \begin{itemize}
+        \item $a$ 
+        \item $m$ \todo{the ratio m/d give the stable equilibrium of $w$ and so the ratio w on the total biomass}
+        \item $d$
+    \end{itemize}
+    \item fire model
+    \begin{itemize}
+        \item $frequency$ 
+        \item $s$
+        \item $\alpha$
+        \item $\beta$
+    \end{itemize}
+\end{itemize}
+
+
+
+\subsection{theoretical calculus}
+
+just give few point to the dynamics of the model, the idea is not to give result but to help understand the dynamics of the model.
+
+\begin{itemize}
+    \item equilibrium
+    \item stability
+    \item time to come back to equilibrium 
+    \item ...
+\end{itemize}
+
+
+\paragraph{different scenarios} \todo{exhaustive list, or not ?}
+\begin{itemize}
+    \item always come back to equilibrium
+    \item always collapse (collapse really fast) system not viable
+    \item fuel management (with enough frequency, $W$ remain low)
+    \item ...
+\end{itemize}
+
+
+
+\subsection{Measures}
+
+\todo{Variability analysis should be performed on data that are free from artefact \cite{seely2004complex} }
+
+\todo{More time means more variation \cite{lawton1988more} }
+
+\todo{A good measure of variability will be independent of the mean abundance if the dynamics are the same, but will not be independent if the dynamics change with mean abundance \cite{noauthor_temporal_1994}}
+
+\todo{We are wary of Leps' statement that 'comparison of results based on various variability measures helps to draw the most unbiased conclusions'. One consequence of the realisation that different measures of variability are related to the mean (and to other factors) in different ways has been a tendency toward the calculation of multiple measures for individual time-series \cite{gaston_measurement_1993}}
+
+\todo{Some authors (MacArthur 1972; Diamond 1984; Pimm et al. 1988) have argued that the rate  of extinction should be directly related to population variability. Al- though intuitively appealing, this relationship may not hold, especially when population density and absolute population variability are positively correlated (Tracy and George 1992; Schoener and Spiller 1992) \cite{rutledge1976ecological}}
+\todo{ (N),Population size of mature individuals (and trendin population size, were clearly the best predictors of extinction risk) \cite{ogrady_what_2004}}
+
+
+
+
+\todo{BELOW (list): \cite{grimm_babel_1997}, pas sur de la ref}
+    \begin{itemize}
+        \item Population models generally predict increased extinction risk (controversial results) 
+        \item tests of the predicted effect of population variability (PV) have yielded variable, controversial results. Several studies provide apparent support for the predicted positive relationship (Karr 1982;Pimm et al. 1988; Forney & Gilpin 1989; Bengtsson & Milbrink 1995). Other studies reveal no significant relationship (Bengtsson 1989; Pollard & Yates 1992) or provide evidence for a negative relationship (Schoener 1991; Schoener & Spiller 1992; Lima et al. 1996; for discussions of the statistical validity of several of these studies see Diamond & Pimm 1993; Pimm 1993; Tracy & George1993; Gaston & McArdle 1994).
+        \item numerous theoretical treatments besides those described above (MacArthur & Wilson 1967; MacArthur 1972; Richter-Dyn & Goel 1972; Leigh 1975, 1981; Belovsky 1987; Goodman 1987) yield the same prediction: increased population variability leads to increased extinction risk.
+    \end{itemize}
+    
+    
+    
+\todo{we need to use several measures of variability (multi-dimensional \cite{arnoldi_inherent_2019}}
+
+\begin{itemize}
+    \item definition
+    \begin{itemize}
+        \item collapse probability
+        \item variability
+            \begin{itemize}
+                \item all
+                \item only
+                \item until
+                \item time regime 10
+            \end{itemize}
+        \item average
+        \item time rotation
+    \end{itemize}
+    \item limitations, issue (discussions)
+    \begin{itemize}
+        \item use the same simulation
+        \item same fire
+        \item same time
+    \end{itemize}
+\end{itemize}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Result
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newpage
+\section{Results}
+
+\subsection{Link literature model}
+
+\begin{itemize}
+    \item link collapse probability and the parameter (enough data ?)
+    \item link variability with the parameter in the literature ? ? ? 
+\end{itemize}
+
+\subsection{Loop}
+
+\begin{itemize}
+    \item show the loop
+    \item illustrate different part of the loop with several figures
+    \begin{itemize}
+        \item no cp no var
+        \item high variability low cp
+        \item high variability high cp
+    \end{itemize}
+\end{itemize}
+
+\subsection{Study of the peaks}
+
+\paragraph{}
+study the order and and the distance (on frequency scale) between the different peaks (variability, collapse probability and average)
+
+
+\subsection{Same fire}
+
+\paragraph{}
+Instead of doing a lot of simulation and average the effect, used only one simulation (only one fire). One problem is that when we change the frequency, we need to choose between used the same time scale, and so not take the same fire (it will truncated) or used the same fire and so no have the same time scale. Because both are relevant, both are computed. 
+
+We can remark that "same fire" tend to be more robust in the sens that it is more smooth.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Discussion
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Discussion}
+\todo{Try to not make repetition (or not too much)}
+
+
+
+\subsection{Model}
+
+
+\paragraph{}
+We assume that the frequency of the fire is independent of the density biomass. It can be argued that fuels have an influence on both severity and frequency  of fires \cite{schoennagel_interaction_2004}. However, adding this feedback (from $W$ to the frequency) will surely tends to decrease the density biomass of $W$ (because, when $W$ is higher, the frequency is higher too, and so the dynamics keep a low value of $W$). In other word, this should to have the "management fuel" scenarios more often
+
+Also, we only consider one kind of death wood, this can be details in several type (coarse woody debris, fine woody debris, below ground ...) \cite{russell_quantifying_2015}. In the literature, the data are rarely for all the wood, and, some wood burned easier than other. 
+
+Moreover, in practice we can distinguish several fire regime (e.g., crown fires, severe surface fires, and light surface fires) \cite{reichle_fire_1981}. All of this different fires disturbed differently the dry wood. So the dynamic can be modelled in a more complex ways.
+
+Less relevant, we only consider density biomass. However, the spatial distribution can affect fires propagation (especially for small fires). For example, a burned area can create an obstacle when another fire occur \cite{bergeron_natural_2002}.
+
+Even if fire is the main perturbation of the system, other disturbances can be relevant, like mechanical thinning \cite{liu_analyzing_2010}\cite{schoennagel_interaction_2004}\cite{wimberly_assessing_2009}.
+
+
+\subsection{Link literature model}
+
+\paragraph{}
+Data varies greatly and also depend on several variable (type of forest, localisation ... )
+
+
+\subsection{Technicality about variability}
+
+\paragraph{}
+Because the collapse of the system affect the variability of this system, it is difficult to have robust computation of the variability. None of the different variant of the variability presented above are perfect which is biased. "Variability all" compute the variance even if the system collapse, which tend to decrease a lot the variability. 
+    
+Also, "variability only" who compute the variability only when the system do not collapse, is biased because the variability could be not be the same when the system will collapse or not. (We do not catch the link between variability and the collapse off the system). And if the system always collapse (which can be the case, especially for long time study) we do not have an estimation of the variability. 
+
+On the other hand, "variability until" used all the simulation, but the time of the study is never the same.
+
+More generally, because collapse can occur at different time (or never) it is difficult to have a robust computation of the variability.
+
+
+
+\subsection{Technicality about collapse probability}
+
+\begin{itemize}
+    \item collapse probability depend of the time of the study
+    \item problem when cp is too high, to have enough data on the variability
+    \item also, problem to have a measure who depend on a numerical parameter
+    \item solution : used collapse probability per time units
+\end{itemize}
+
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Conclusion
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Conclusion}
+\addcontentsline{toc}{section}{Conclusion}
+
+
+\subsection*{Synthesis}
+\addcontentsline{toc}{subsection}{Synthesis}
+
+
+\subsection*{Opening}
+\addcontentsline{toc}{subsection}{Opening}
+
+\paragraph{}
+Talk about a more general / different problem ...
+
+
+\newpage
+
+\section*{personal review}
+\addcontentsline{toc}{section}{personal review}
+
+
+\newpage
+\bibliographystyle{plain}
+\bibliography{references}
+
+
+
+\newpage
+\appendix
+\addcontentsline{toc}{section}{Annexes}
+
+\newpage
+\section{Adimensionnalisation}
+
+\todo{calculus to Adimensionnalise the system}
+
+
+\newpage
+\section{Technicality}
+
+\subsection{Solve the system}
+
+\paragraph{}
+problem : compute a continuous dynamics with discrete disturbances \\
+solution : use classical solver between each fire and stop the solver when a fire occur to compute and remove the biomass
+
+
+\subsection{Choice of the time step}
+illustrate the problem of the choice of the time step, according to the frequency.
+
+\subsection{}
+Time of the study
+
+%\newpage
+%\section{Appendix 3}
+
+
+
+\end{document}
